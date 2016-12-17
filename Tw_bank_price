@@ -6,15 +6,24 @@ xml_view(Tw_bank, add_filter = TRUE)
 td1 <- xml_find_all(Tw_bank, '//tr/td[@data-table="本行現金買入"]',
                     ns=xml2::xml_ns(Tw_bank))
 td1_price <- xml_text(td1)
+length(td1_price)
+td_seq <- seq(1,38,2)
+td1_price <- td1_price[td_seq]
 td2 <- xml_find_all(Tw_bank, '//tr/td[@data-table="本行現金賣出"]', 
                     ns=xml2::xml_ns(Tw_bank))
 td2_price <- xml_text(td2)
+length(td2_price)
+td2_price <- td2_price[td_seq]
 td3 <- xml_find_all(Tw_bank, '//tr/td[@data-table="本行即期買入"]', 
                     ns=xml2::xml_ns(Tw_bank))
 td3_price <- xml_text(td3)
+length(td3_price)
+td3_price <- td3_price[td_seq]
 td4 <- xml_find_all(Tw_bank, '//tr/td[@data-table="本行即期賣出"]',
                     ns=xml2::xml_ns(Tw_bank))
 td4_price <- xml_text(td4)
+length(td4_price)
+td4_price <- td4_price[td_seq]
 td5 <- xml_find_all(Tw_bank, '//tr/td/div/div', 
                     ns=xml2::xml_ns(Tw_bank))
 td5_name <- xml_text(td5)
