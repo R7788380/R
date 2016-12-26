@@ -40,4 +40,4 @@ Tw_bank_price <- data.frame(幣別 = td5_name,
                             本行即期買入 = td3_price, 
                             本行即期賣出 = td4_price)
 
-write.csv(Tw_bank_price,"~/Desktop/台灣銀行爬蟲/Tw_bank.csv")
+write.csv(Tw_bank_price,"~/Desktop/銀行爬蟲/Tw_bank.csv")
