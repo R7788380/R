@@ -21,6 +21,8 @@ today_news <- data.frame(日期 = c("2016.12.26"),
                          時間 = title_times,
                          種類 = title_species,
                          狂新聞 = title_content)
+
+write.csv(today_news,"~/Desktop/爬蟲/蘋果每日報.csv")
 #要跳頁面直接改網址尾數即可
 #"http://www.appledaily.com.tw/realtimenews/section/new/2"
 #"http://www.appledaily.com.tw/realtimenews/section/new/3"，以此類推
