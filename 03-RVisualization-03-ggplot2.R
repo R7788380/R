@@ -16,7 +16,7 @@ ggplot(infert, aes(x = education)) +
 #ggplot2所產生的圖看起來更有層次感，網狀背景跟座標數值也配合
 
 qplot(education, data = infert, geom = "bar") 
-#qplot也是ggplot套件裡面的畫圖參數，跟R原有的plot很像
+#qplot也是ggplot2套件裡面的畫圖參數，跟R原有的plot很像
 #qplot只是把ggplot和加入圖層的動作包裝成一個函數而已
 #而在ggplot則要使用aes函數來包裝
 
@@ -94,5 +94,6 @@ g + facet_wrap(~race, ncol = 2) #wrap可以自訂要分成幾個col
 install.packages("GGally") #一次畫出多筆數據倆倆之間的散佈圖
 library(GGally) #載入GGally套件
 ggpairs(hsb, 7:10) #分別比較read,write,math,science之間的關係
+
 
 

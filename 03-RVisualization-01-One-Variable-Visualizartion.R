@@ -23,7 +23,7 @@ table(spon)
 spons <- table(spon); percent <- spons / sum(spons) * 100 ;percent <- round(percent, digits = 2)
 pp <- paste0(names(spons), "=", percent, sep = "%")
 pie(spons, labels = pp) 
-#pie圓餅圖需要名稱和個數，需要先用table計算類別數量
+#pie圓餅圖需要名稱和個數比率，需要先用table計算類別數量
 pie(spon) #無法直接輸入factor
 
 install.packages("plotrix") 
@@ -34,7 +34,7 @@ pie3D(spons, labels = pp) #3D圓餅圖
 age <- infert$age
 x <- hist(age)
 hist(age, breaks = 5)#年齡屬於比例尺度，所以可以呈現出直方圖
-x #輸入假設變數顯示組距、次數、密度比例、組中位數、等距 等等資訊
+x #輸入假設變數顯示組距、次數、個數比率、組中位數、等距 等等資訊
 #當知道了組距就能透過cut函數中的breaks來分類
 cut(age, breaks = x$breaks) %>% plot() #輸入plot就能了解組距情況
 cut(age, breaks = quantile(age)) %>% plot() #也能用四分位距來分類
@@ -67,6 +67,8 @@ y <- tail(sunspot.year, 100)
 plot(y);lines(y) #lines功能就是在原本plot上畫上type = "l"的線
 #plot,hist,ggplot這種稱為高階繪圖函數，另起新圖
 #lines,points稱為低階繪圖函數，修飾原圖
+axis(2, at = seq(10, 200, 10), labels = seq(10, 200, 10))
+#添加y軸數值axis.y
 
 paste("123", LETTERS[1:5]) #paste函數默認在每個x後面有空格
 paste0("123", LETTERS[1:5]) #paste0函數默認在每個x後面為空

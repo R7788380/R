@@ -26,3 +26,20 @@ z <- lm(y ~ x1+x2+x3,data) #迴歸分析函數lm()，y為被解釋變數，abc�
 summary(z) #使用summary()可以顯示回歸統計量
 #擬和值,殘差值,R-squared,p-value等等...
 
+
+#回歸
+X <- model.matrix(~ Type + Treatment + conc, CO2)
+#建立一個基於Type、Treatment和conc的矩陣
+y <- CO2$uptake
+beta.hat <-  solve(t(X) %*% X) %*% t(X) %*% y 
+#找出beta.hat讓X %*% beta.hat很接近y
+all.equal(solve(t(X) %*% X) %*% t(X) %*% y, 
+          solve(t(X)%*%X,t(X)%*%y))  #第二參數b裡外都可放
+z <- cor(X %*% beta.hat,y)  #算出估計出的y和真值y的相關係數
+z^2#相關係數z的平方就是R-squared (SSE)
+#R-squared能夠判斷出一個模型是否完善
+
+#上述的結果就如同直接跑'lm'回歸
+g <- lm(uptake ~ Type + Treatment + conc, CO2)
+g.s <- summary(g) #summary看所有統計量
+g.s$r.squared #此值就是z^2 

@@ -9,3 +9,9 @@
 #使用ordered=TRUE顯示出讓R知道要進行排序，levels用來設定大小位置
 #輸出Levels: A < AB < O
 #排序出levels等第之後，就能進行比較，x[1]>x[2]
+x <- factor(c(rep("ABC",5),rep("DEF",5)),levels = c("ABC","DEF"))
+dput(x) #factor不會以"ABC","DEF"這種字串形式儲存每一個向量元素
+#而是以1L,2L這種形式來儲存，不然會造成讀入的困難
+attributes(x) #將R物件賦予names和class的屬性
+
+

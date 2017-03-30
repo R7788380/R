@@ -29,3 +29,13 @@ solve(A,B) #解出線性方程 A %*% x = B 的x值
 #eigen() 求出特徵值values及特徵向量vectors，輸出以list表示，用$提取
 #請參考 https://www.youtube.com/watch?v=OGZX9CYYEic
 #       https://goo.gl/YIDNvH
+
+x <- matrix(1:4,2,2)
+dput(x)
+attributes(x) #R物件1:4賦予dim這屬性c(2L,2L)
+
+n <- matrix(1:6, ncol=3, nrow=2)
+n #2列3行，預設由上至下順序排列
+m <- matrix(1:6, ncol=3, nrow=2, byrow=TRUE)
+m  #2列3行，byrow預設FALSE，TRUE表示由左而右橫向順序排列
+   

@@ -44,3 +44,7 @@ mutate(population, city = substring(site_id,1,3)) %>%
     geom_point() +
     geom_line() +
     theme(text = element_text(family = "楷體-繁 黑體"))
+
+theme_set(theme_gray(base_family = "STKaiti")) 
+#中文顯示問題還有這種解決方法
+

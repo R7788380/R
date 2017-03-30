@@ -21,8 +21,8 @@ xml_view(x, add_filter = TRUE)
 #透過xml_view將xml_document輸出，add_filter = TRUE代表輸出一個
 #表格到右下視窗Viewer，如果 = FALSE，沒辦法進行XPath搜尋，
 #無法清楚看出整個樹狀結構，一不小心還會覆蓋原有coding紀錄
-#<https://goo.gl/nXCgRc>會匯出這樣的box，上面的XPath就是用來搜尋
-#<//span[@class="f3 push-content"]>，輸入這樣的格式可以萃取資訊
+#上面的XPath就是用來搜尋
+#//span[@class="f3 push-content"]，輸入這樣的格式可以萃取資訊
 #接下來按一下R的pattern，會出現專屬R的code
 xml2::xml_find_all(x, '//span[@class="f3 push-content"]', ns=xml2::xml_ns(x))
 #xml_find_all的功能如上，x代表你的xml_document，xpath是你想搜尋的資料

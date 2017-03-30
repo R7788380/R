@@ -49,10 +49,10 @@ gvisCalendar(TWII2) %>% plot()
 gvisOrgChart(Regions) %>% plot()  #Organization組織圖
 #還有很多繪圖類型都在googleVis examples裡面
 
-install.packages("ggmap") #介紹繪製地圖套件
+library(devtools)
+devtools::install_github("dkahle/ggmap") #介紹繪製地圖套件
 library(ggmap) 
-map <- get_map(location = "Taiwan", zoom = 8, language = "zh-TW",
-               maptype = "roadmap")
+map <- get_map(location = "Taiwan", zoom = 8, language = "zh-TW",maptype = "roadmap")
 #location參數可直接輸入地名，也可輸入經緯度
 #zoom則是控制地圖縮放大小，3(大陸等級)~21(建築等級)
 #語言則使用地區碼<https://goo.gl/GRKq7F>，這裡以繁體做比喻

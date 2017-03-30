@@ -12,6 +12,8 @@ colors()[grep("blue",colors())]
 #xlab, ylab為x,y軸的標題名稱，main為標題，cex.name設定xlab的大小倍率
 #cex.axis設定座標軸數值的大小倍率，beside = TRUE會將row分開表示，FALSE則疊一起
 #legend.text = TRUE會出現說明圖示，args.legend以list來設定圖示的位置
+#在OS中，plot圖的座標名稱沒辦法用中文顯示，要使用family = ""來設定字體
+#OS的字體簿可以找出自己想要字型，複製過來就行
 
 #barplot不只用在次數，還有其他方式
 dat2 <- hsb %>% group_by(sex, schtyp) %>% summarise(math.avg = mean(math))
@@ -65,6 +67,7 @@ cex.science <- (hsb$science-25)/50*5
 plot(~read+math,data = hsb, col = col.sex, pch = pch.schtyp, cex = cex.science)
 #<http://blog.qiubio.com:8080/archives/2395>
 #顏色、圖形代碼等等
+#pch控制點的符號，cex控制放大縮小倍率
 
 
 
