@@ -58,7 +58,7 @@ grepl("AA", flights$tailnum) #跟grep類似，只是傳回的為布林向量
 "AAA" %>% grepl(pattern = "A") 
 #當使用%>%傳回的值若不是在第一個參數時，使用函數內指定參數，R會判斷輸入第二個參數
 grepl("^p.",c("pppp","peeee","eeeep")) #找出開頭是p的字串
-grepl("p$",c("pppp","peeee","eeeep")) #找出結尾是e的字串
+grepl("p$",c("pppp","peeee","eeeep")) #找出結尾是p的字串
 grepl("^p.*e$",c("pppp","peeee","eeeep")) #p開頭e結尾的字串
 grepl("[123]",c("1234","pee3e","eeeep")) #元素中有1或2或3的字串
 grepl("[ep]",c("pppp","peeee","eeeep")) #同理，有e或p的字串
