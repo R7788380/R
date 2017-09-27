@@ -1,5 +1,5 @@
 #matrix() 矩陣
-matrix(1:6,2,3,byrow=FALSE) #產生2x3矩陣，byrow=FALSE代表按col由上而下排列
+matrix(1:6,2,3,byrow=FALSE) #產生2x3矩陣，byrow=FALSE代表按col由上至下排列
 #attributes:$dim，輸出list格式
 #可使用dim(x) <- c()來改變x的維度，甚至更高維度
 #array() 多維陣列
